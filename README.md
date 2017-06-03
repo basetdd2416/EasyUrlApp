@@ -17,7 +17,7 @@ EasyUrlApp is make a url for shorten easy to redirect to another pag , this app 
 Via npm:
 
 ```sh
-$ git clone project
+$ git clone https://github.com/basetdd2416/EasyUrlApp.git
 $ npm install
 $ npm start
 ```
