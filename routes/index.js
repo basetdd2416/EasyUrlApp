@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
     res.render('index', {title: 'EasyUrlApp'});
 });
-
+/* GET :token page. */
 router.get('/:token', function (req, res, next) {
     const token = req.params.token;
     const db = req.app.get('db');

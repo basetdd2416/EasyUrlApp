@@ -5,6 +5,9 @@ var express = require('express');
 var router = express.Router();
 const validUrl = require('valid-url');
 const config = require('../../config');
+/**
+ *
+ */
 router.post('/', function (req, res, next) {
     const url = req.body.url;
     const db = req.app.get('db')
