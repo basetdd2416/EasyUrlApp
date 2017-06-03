@@ -17,6 +17,8 @@ EasyUrlApp is make a url for shorten easy to redirect to another pag , this app 
 Via npm:
 
 ```sh
-$ npm install fluent-ffmpeg
+$ git clone project
+$ npm install
+$ npm start
 ```
 
