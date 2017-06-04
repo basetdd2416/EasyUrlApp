@@ -8,8 +8,7 @@ router.get('/', function (req, res, next) {
 /* GET :token page. */
 router.get('/:token', function (req, res, next) {
     const token = req.params.token;
-    const db = req.app.get('db');
-    Link.findOne({token}).then(link=>{
+    Link.findOne(token).then(link=>{
         if (!link) {
             return next({
                 message: "token not found",

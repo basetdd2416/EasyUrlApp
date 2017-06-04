@@ -10,5 +10,6 @@ module.exports = {
     domain: 'http://localhost:3000',
     mongodb: {
         uri: 'mongodb://localhost:27017/EasyLinkAp'
-    }
+    },
+    secret: "easyappurl" || process.env.SECRET_KEY
 };
