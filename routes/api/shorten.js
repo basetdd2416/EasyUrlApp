@@ -5,6 +5,7 @@ var express = require('express');
 var router = express.Router();
 const validUrl = require('valid-url');
 const config = require('../../config');
+const Link = require('../../models/link');
 /**
  *
  */
@@ -17,18 +18,23 @@ router.post('/', function (req, res, next) {
         return res.status(400).send({message: "url is not valid"})
     }
     const token = Math.random().toString(36).slice(-5);
-    db.get('links')
-        .push({url, token})
-        .last()
-        .assign({id: Date.now()})
-        .write()
-        .then(link => {
-            const shortUrl = `${config.domain}/${link.token}`;
+    const linkData = new Link({
+        longUrl: url,
+        token
+    });
+    linkData.save()
+        .then(result => {
+            console.log(result)
+            const shortUrl = `${config.domain}/${result.token}`;
             res.send({
                 shortUrl
             })
         })
-        .catch(err => next(err));
+        .catch(err => {
+            console.log(err);
+            next(err)
+        });
+
 });
 
 

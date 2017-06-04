@@ -4,6 +4,29 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    style(type='text/css').
+      html,
+      body {
+        height: 100%;
+        background-color: #6cd248;
+      }
+      body {
+        color: #fff;
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+      }
+
+      #link {
+        display: none;
+        padding-top: 15px;
+      }
+
+      #link a {
+        color: #2a40f8;
+        font-size: 1.5em;
+        margin-right: 20px;
+      }
+
   body
     block content
   script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
